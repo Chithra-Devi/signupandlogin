@@ -1,0 +1,49 @@
+<div>
+   <form>
+    
+    <label>Employee ID : </label>
+      <input type="number" class="form-control" id="employeeid" placeholder="Enter Employee ID" name="Employee ID"
+         required>
+      <div class="valid-feedback"></div>
+      <label> Name : </label>
+      <input type="text" class="form-control" id="name" placeholder="Enter Name" name="Name" required>
+      Password :
+      <input type="Password" class="form-control" id="password" placeholder="Password" name="Password" required>
+      Confirm Password :
+      <input type="retype-Password" class="form-control" id="c-password" placeholder="retype-Password" name="Password"
+         required>
+      <div class="form-group">
+         Email ID :
+         <input type="email" class="form-control" id="email" placeholder="email" name="email" required>
+         <label for="stdate">DOJ :</label>
+         <input type="date" class="form-control" id="stdate" placeholder="Enter Date" name="Date" required>
+         <div class="valid-feedback"></div>
+    </div>
+      <label> Project ID : </label>
+      <input type="number" class="form-control" id="project ID" placeholder="Project ID" name="project ID" required>
+      <label> Project Name: </label>
+      <input type="text" class="form-control" id="project name" placeholder="Project Name" name="project Name" required>
+      <label>
+         Job Role :
+      </label>&nbsp;&nbsp;
+      <select>
+         <option value="Job Role"> select </option>
+         <option value="Testor"> Tester</option>
+         <option value="Quality Engineer">Quality Engineer</option>
+         <option value="Developer">Developer</option>
+         <option value="Data Analyst">Data Analyst</option>
+         <option value="Consultant">Consultant</option>
+         <option value="Other">Other</option>
+      </select><br><br>
+      <label>
+         Gender :
+      </label><br>
+      <input type="radio" name="male" /> Male <br>
+      <input type="radio" name="female" /> Female <br>
+      <input type="radio" name="other" /> Other
+      <div>
+    <button type="submit" class="registerbtn btn btn-success" click="this.register()" routerLink="/login"> Register </button>
+         <!-- <button type="reset" class="registerbtn btn btn-success"> Reset </button> -->
+      </div>
+   </form>
+</div>

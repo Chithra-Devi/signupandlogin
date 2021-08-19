@@ -1,0 +1,14 @@
+<div class="login">
+
+    <div class="card">
+        <div class="inputs">
+          <input type="text" placeholder="UserName*" id="username" [(ngModel)]="user.username"  required />
+          <input type="password" placeholder="Password*" id="password" [(ngModel)]="user.password" required/>
+        </div>
+        <div class="buttons">
+          <button class="btn" id="btn-login" type="submit" (click)="login()">Login</button>
+          <button class="btn" id="btn-signup" routerLink="/signup" formnovalidate>Sign Up</button>
+          <button class="btn" id="btn-fgtpwd" formnovalidate>Forget Password</button>
+        </div>
+    </div>
+  </div>

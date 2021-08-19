@@ -1,0 +1,59 @@
+.header {
+    background-color: purple;
+    height: 40px;
+}
+
+.header_component {
+    display: inline-block;
+    background-color: purple;
+    color: white;
+    padding: 5px; 
+}
+
+#header_title{
+    margin-left: 525px;
+}
+
+.card {
+    height: 50px;
+    width: 40%;
+    box-shadow: gray;
+    margin: 250px 50px 250px 500px;
+}
+
+.inputs {
+    display: inline-grid;
+    margin-left: 50px;
+}
+
+#username {
+    margin-top: 5px;
+}
+
+#password {
+    margin-top: 5px;
+}
+
+.btn {
+    margin: 10px;
+    color: white;
+    
+}
+
+#btn-login{
+    background-color: green;
+    border-radius: 2px;
+    height: 30px;
+}
+
+#btn-signup{
+    background-color: #ebd534;
+    border-radius: 2px;
+    height: 30px;
+}
+
+#btn-fgtpwd{
+    background-color: #3489eb;
+    border-radius: 2px;
+    height: 30px;
+}
