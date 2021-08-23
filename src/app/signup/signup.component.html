@@ -1,18 +1,18 @@
 
-      <label>Employee ID : </label>
-      <input type="number" placeholder="Employee ID*" id="employeeid" [(ngModel)]="user.employeeId" required />
-<br><br>
-      <label> Name       : </label>
+<form action="validation"></form>
+<label>Employee ID : </label>
+<div class="row d-flex justify-content-center">
+   <input type="number" placeholder="Employee ID*" id="employeeid" [(ngModel)]="user.employeeId" required />
+   <br><br>
+   <label> Name : </label>
 
-      <input type="text" placeholder="Name*" id="name" [(ngModel)]="user.name" required />
-      <br><br>
-      <label>Password    :</label>
-
+   <input type="text" placeholder="Name*" id="name" [(ngModel)]="user.name" required />
+   <br><br>
+   <label>Password :</label>
+   <div class="row d-flex justify-content-center">
       <input type="Password" placeholder="password*" id="password" [(ngModel)]="user.Password" required />
       <br><br>
       <label>Confirm Password :</label>
-      <div class="form-group">
-        
 
       <input type="Password" placeholder="retype password*" id="cPassword" [(ngModel)]="user.cPassword" required />
       <br><br>
@@ -33,11 +33,12 @@
 
    <input type="text" placeholder="projectName*" id="projectName" [(ngModel)]="user.projectName" required />
    <br><br>
-   
+
    <label for="jobRole"> Job Role</label><br>
+   <div class="text-center"></div>
    <select type="number" [(ngModel)]="selectedCat">
       <option *ngFor="let cat of categories" [ngValue]="cat">{{cat.jobRole}}</option>
-    </select>
+   </select>
    <!-- <select  id="singleSelect" [(ngModel)]="chithra">
  
      <option [ngValue]="Tester">Tester</option> 
@@ -49,30 +50,33 @@
      
       </select><br> -->
    <br><br>
-<br><br>
    <div class="form-group">
       <div class="form-group">
-        
+
          <div class="form-group" [class.has-error]="gender.invalid">
             <label class="control-label">Gender</label>
             <div class="form-control">
-            <label class="radio-inline">
-            <input type="radio"name ="gender" required #gender = "ngModel" value ="male" [(ngModel)]= "user.gender">Male </label>
-            <label class="radio-inline">
-            <input type="radio"name ="gender" required #gender = "ngModel" value ="female" [(ngModel)]= "user.gender">Female </label>
-            <label class="radio-inline">
-            <input type="radio"name ="gender" required #gender = "ngModel" value ="others" [(ngModel)]= "user.gender">Others </label>
+               <label class="radio-inline">
+                  <input type="radio" name="gender" required #gender="ngModel" value="male"
+                     [(ngModel)]="user.gender">Male </label>
+               <label class="radio-inline">
+                  <input type="radio" name="gender" required #gender="ngModel" value="female"
+                     [(ngModel)]="user.gender">Female </label>
+               <label class="radio-inline">
+                  <input type="radio" name="gender" required #gender="ngModel" value="others"
+                     [(ngModel)]="user.gender">Others </label>
             </div>
-            </div>
-            
-     </div>
-  
-  </div>
-      
-      <br><br>
-      
-      
-      <button type="submit" class="registerbtn btn btn-success" (click)="this.registerEmployee()" > Register
-      </button>
-      <!-- <button type="reset" class="registerbtn btn btn-success"> Reset </button> -->
-      
+         </div>
+
+      </div>
+
+   </div>
+
+   <br><br>
+
+   <button type="submit" class="registerbtn btn btn-success" (click)="this.registerEmployee()"> Register
+   </button>
+   <!-- <button type="reset" class="registerbtn btn btn-success"> Reset </button> -->
+
+
+   <button class="register" id="btn-register" routerLink="/login" formvalidate>Back to Login</button>
