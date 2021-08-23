@@ -3,6 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { LeaveComponent} from './leave/leave.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
