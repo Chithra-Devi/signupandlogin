@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ThrowStmt } from '@angular/compiler';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Injectable({
   providedIn: 'root'
@@ -36,12 +38,17 @@ export class SignupComponent implements OnInit {
   signup: any;
   user: any;
 
-  constructor(private _http: HttpClient) {
+  constructor(private _http: HttpClient,private toastr: ToastrService) {
   this.user = {
     employeeId: ''
   }
    }
 
+   
+   showToastr(){
+  this.toastr.success('some messages', 'titile');
+  }
+  
  
 
   registerEmployee(){
@@ -62,8 +69,17 @@ export class SignupComponent implements OnInit {
       "gender":this.user.gender,
     }).subscribe(
       data => {
-        
-       console.log("Response", data);
+        if(data.statusCode == "201"){
+          this.toastr.success('register successful');
+          this.router.navigate(['Login']);
+        }
+        else{
+          this.toastr.error('register unsuccessful');
+          console.log("signup Credentials")
+        }
+      {
+        console.log("Response", data);
+      }
       })
 
   }
@@ -113,34 +129,34 @@ function controller(arg0: string, arg1: (string | (($scope: any) => void))[]) {
 //           "gender": "Female",
 //         }
 //        {
-//           SignupComponent.subscribe(
-//             (data: { statusCode: string; }) => {
-//               if (data.statusCode == "201") {
-//                 this.router.navigate(['login']);
-//               }
-//               else {
-//                 console.log("enter the correct data")
-//               }
+    //       SignupComponent.subscribe(
+    //         (data: { statusCode: string; }) => {
+    //           if (data.statusCode == "201") {
+    //             this.router.navigate(['login']);
+    //           }
+    //           else {
+    //             console.log("enter the correct data")
+    //           }
 
-//               console.log("Response", data);
-//               // we  have to check for response then redirect  you have to use router need to display via toast message 
-//               var onmessage = '';
-//               // this.ngOnInit(); {
-//               //   this.route.queryParams
-//               //     .subscribe((params: { registered: string | undefined; }) => {
-//               //       if (params.registered !== undefined && params.registered === 'true') {
-//               //         onmessage = 'Registration Successful! Please Login!';
-//               //       }
-//               //     });
-//               // }
-//             })
-//         }
-//     }
+    //           console.log("Response", data);
+    //           // we  have to check for response then redirect  you have to use router need to display via toast message 
+    //           var onmessage = '';
+    //           // this.ngOnInit(); {
+    //           //   this.route.queryParams
+    //           //     .subscribe((params: { registered: string | undefined; }) => {
+    //           //       if (params.registered !== undefined && params.registered === 'true') {
+    //           //         onmessage = 'Registration Successful! Please Login!';
+    //           //       }
+    //           //     });
+    //           // }
+    //         })
+    //     }
+    // }
 
-//     function subscribe(arg0: (data: {
-//       statusCode: string;
-//     }) => void): void {
-//       throw new Error('Function not implemented.');
-//     }
+    // function subscribe(arg0: (data: {
+    //   statusCode: string;
+    // }) => void): void {
+    //   throw new Error('Function not implemented.');
+    // }
 
 
