@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Router} from '@angular/router'
+import { ToastrService } from 'ngx-toastr';
 
 
 
@@ -11,12 +12,19 @@ import {Router} from '@angular/router'
 })
 export class LoginComponent implements OnInit {
   title = 'login';
+
+  // constructor(private toastr: ToastrService){
+
+  //   showToastr(){
+  //     this.toastr.success('login successful','login');
+  //   }
+  // }
   user = {
     'username':'',
     'password':''
   };
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(private http: HttpClient, private router: Router,private toastr: ToastrService) {
     // this.user.username = 'Hello';
     // this.user.password = 'Hello';
    }
@@ -28,6 +36,7 @@ export class LoginComponent implements OnInit {
   }
   
   login(){
+    
     console.log("Clicking");
     console.log("Clicking",this.user);
     this.http.post<any>('http://localhost:8080/psa/loginService',
@@ -36,11 +45,19 @@ export class LoginComponent implements OnInit {
          "password": this.user.password
       }).subscribe(
         data => {
+         
           if(data.statusCode == "201"){
+            this.toastr.success('login successful');
             this.router.navigate(['welcome']);
           }
           else{
-            console.log("Login Credentials")
+            
+            this.toastr.error('login unsuccessful');
+            
+            
+                  
+            console.log("Login Credentials");
+
           }
           console.log("Response", data);
           // we  have to check for response then redirect  you have to use router need to display via toast message 
