@@ -11,7 +11,6 @@ import { LoginComponent } from './login/login.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-import { LeaveComponent } from './leave/leave.component';
 
 
 @NgModule({
@@ -19,19 +18,19 @@ import { LeaveComponent } from './leave/leave.component';
     AppComponent,
     SignupComponent,
     LoginComponent,
-    WelcomeComponent,
-    LeaveComponent,
+    WelcomeComponent
   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    ToastrModule.forRoot(),
     HttpClientModule,
     FormsModule,
-    
-  
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 2000,
+progressBar: true
+    })
     
   ],
   providers: [],

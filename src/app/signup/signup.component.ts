@@ -158,5 +158,3 @@ function controller(arg0: string, arg1: (string | (($scope: any) => void))[]) {
     // }) => void): void {
     //   throw new Error('Function not implemented.');
     // }
-
-
