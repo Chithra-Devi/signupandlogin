@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./leave.component.css']
 })
 export class LeaveComponent implements OnInit {
+  title = 'leave';
+  signup: any;
+  user: any;
 
   constructor() { }
   
