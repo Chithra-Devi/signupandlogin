@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ThrowStmt } from '@angular/compiler';
 import { ToastrService } from 'ngx-toastr';
+import { Router, Routes } from '@angular/router';
 
 
 @Injectable({
@@ -35,7 +36,7 @@ export class SignupComponent implements OnInit {
   signup: any;
   user: any;
 
-  constructor(private _http: HttpClient,private toastr: ToastrService) {
+  constructor(private _http: HttpClient,private router: Router,private toastr: ToastrService) {
     this.user = {
        employeeId: ''
      }
@@ -49,7 +50,7 @@ showToastr(){
  
 
   registerEmployee(){
-
+ 
     if(this.user.employeeId === undefined || this.user.employeeId== ''){
       this.toastr.error('Please enter valid employeeId');
       return;
@@ -114,11 +115,14 @@ showToastr(){
     }).subscribe(
       data => {
         if(data.statusCode == "201" || data.statusCode == "200") {
-          this.toastr.success('register successful');
-          this.router.navigate(['/login']);
+          this.toastr.success('register successful,  click back to login');
+          this.router.navigate(['login']);
         } else if( data.statusCode == "500"){
-          this.toastr.error('user already exists');
-          this.router.navigate(['/login']);
+          this.toastr.error('user already exists, click back to login');
+          this.router.navigate(['login']);
+          // const routes: Routes = [ 
+          //   { path: 'http://localhost:8080/psa/registerEmployee', redirectTo: '/login' }, 
+        //  ];
         }
         else 
         {
@@ -131,6 +135,7 @@ showToastr(){
   }
 
   ngOnInit(): void {
+    this.user.gender='male';
     // this.registerEmployee();
     console.log("signup signup calling Before");
   //   controller('jobRoleController', ['$scope', function($scope) {
@@ -204,4 +209,3 @@ function controller(arg0: string, arg1: (string | (($scope: any) => void))[]) {
     // }) => void): void {
     //   throw new Error('Function not implemented.');
     // }
-

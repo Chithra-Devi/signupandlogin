@@ -1,7 +1,18 @@
 
 .logo{
     background:url('../assets/img/PSA-LOGO.jpg');
-    width : 960px;
-    height : 148px;
+    width : 9px;
+    height : 18px;
 
+}
+.header {
+    background-color: purple;
+    height: 40px;
+}
+
+.header_component {
+    display: inline-block;
+    background-color: purple;
+    color: white;
+    padding: 5px; 
 }

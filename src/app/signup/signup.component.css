@@ -1,3 +1,11 @@
-.registerbtn { 
-    margin: 10px;
+.header {
+    background-color: purple;
+    height: 40px;
+}
+
+.header_component {
+    display: inline-block;
+    background-color: purple;
+    color: white;
+    padding: 5px; 
 }

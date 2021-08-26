@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+
+
+<html lang="en"></html>
+<body style="background-color: #ffff;border-style: solid"></body>
 <form action="validation"></form>
 <label>Employee ID : </label>
 <div class="row d-flex justify-content-center">
@@ -20,7 +25,8 @@
      
 
       <label for="email">Email ID :</label>
-      <input type="email" placeholder ="email*" id="email" [(ngModel)]="user.emailId" required />
+      <input type="email" placeholder ="email*" id="email" [(ngModel)]="user.emailId" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" required />
+    
       
       <label for="stdate">DOJ :</label>
 
@@ -59,7 +65,7 @@
             <label class="control-label">Gender</label>
             <div class="form-control">
                <label class="radio-inline">
-                  <input type="radio" name="gender" required #gender="ngModel" value="male"
+                  <input type="radio" name="gender" required #gender="ngModel" value="male" checked 
                      [(ngModel)]="user.gender">Male </label>
                <label class="radio-inline">
                   <input type="radio" name="gender" required #gender="ngModel" value="female"
@@ -74,11 +80,6 @@
 
    </div>
 
-   <br><br>
-
    <button type="submit" class="registerbtn btn btn-success" (click)="this.registerEmployee()"> Register
    </button>
-   <!-- <button type="reset" class="registerbtn btn btn-success"> Reset </button> -->
-
-
-   <button class="register" id="btn-register" routerLink="/login" formvalidate>Back to Login</button>
+  
