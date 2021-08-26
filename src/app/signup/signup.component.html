@@ -2,49 +2,50 @@
 
 
 <html lang="en"></html>
-<body style="background-color: #ffff;border-style: solid"></body>
-<form action="validation"></form>
-<label>Employee ID : </label>
-<div class="row d-flex justify-content-center">
-   <input type="number" placeholder="Employee ID*" id="employeeid" [(ngModel)]="user.employeeId" required />
+<div class="text-center">
+ <form style action="validation"></form>
+ <label>Employee ID : </label>
+ <div  class="row d-flex justify-content-center">
+   <input style="text-align:left;height: 30px; width: 600px;" type="number" placeholder="Employee ID*" id="employeeid" [(ngModel)]="user.employeeId"  required />
    <br><br>
    <form action="validation"></form>
-   <label> UserName : </label>
+   <label> UserName :  </label>
 
-   <input type="text" placeholder="Name*" id="name" [(ngModel)]="user.name" required />
+   <input  style="text-align:left;height: 30px; width: 600px;" type="text" placeholder="Name*" id="name" [(ngModel)]="user.name" required />
    <br><br>
    <form action="validation"></form>
-   <label>Password :</label>
+   <label>Password : </label>
    <div class="row d-flex justify-content-center">
-      <input type="Password" placeholder="password*" id="password" [(ngModel)]="user.Password" required />
+      <input  style="text-align:left;height: 30px; width: 600px;" type="Password" placeholder="password*" id="password" [(ngModel)]="user.Password" required />
       <br><br>
-      <label>Confirm Password :</label>
+      <label>Confirm Password : </label>
 
-      <input type="Password" placeholder="retype password*" id="cPassword" [(ngModel)]="user.cPassword" required />
+      <input  style="text-align:left;height: 30px; width: 600px;" type="Password" placeholder="retype password*" id="cPassword" [(ngModel)]="user.cPassword" required />
       <br><br>
      
 
       <label for="email">Email ID :</label>
-      <input type="email" placeholder ="email*" id="email" [(ngModel)]="user.emailId" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" required />
+      <input  style="text-align:left;height: 30px; width: 600px;" type="email" placeholder ="email*" id="email" [(ngModel)]="user.emailId" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" required />
     
       
       <label for="stdate">DOJ :</label>
 
-      <input type="date" placeholder="doj*" id="stdate" [(ngModel)]="user.Date" required />
+      <input  style="text-align:left;height: 30px; width: 600px;" type="date" placeholder="doj*" id="stdate" [(ngModel)]="user.Date" required />
       <div class="valid-feedback"></div>
    </div><br><br>
-   <label> Project ID : </label>
+   <label> Project ID :</label>
 
-   <input type="number" placeholder="projectId*" id="project ID" [(ngModel)]="user.ProjectID" required />
+   <input  style="text-align:left;height: 30px; width: 600px;" type="number" placeholder="projectId*" id="project ID" [(ngModel)]="user.ProjectID" required />
    <br><br>
-   <label> Project Name: </label>
+   <label> Project Name : </label>
 
-   <input type="text" placeholder="projectName*" id="projectName" [(ngModel)]="user.projectName" required />
+   <input  style="text-align:left;height: 30px; width: 600px;" type="text" placeholder="projectName*" id="projectName" [(ngModel)]="user.projectName" required />
    <br><br>
 
-   <label for="jobRole"> Job Role</label><br>
-   <div class="text-center"></div>
-   <select type="number" [(ngModel)]="selectedCat">
+   <label for="jobRole"> Job Role : </label><br>
+   
+   <div style="text-align:left; " class="text-center"></div>
+   <select style="height:30px; width: 600px;" type="number" [(ngModel)]="selectedCat">
       <option *ngFor="let cat of categories" [ngValue]="cat">{{cat.jobRole}}</option>
    </select>
    <!-- <select  id="singleSelect" [(ngModel)]="chithra">
@@ -59,11 +60,12 @@
       </select><br> -->
    <br><br>
    <div class="form-group">
-      <div class="form-group">
-
-         <div class="form-group" [class.has-error]="gender.invalid">
-            <label class="control-label">Gender</label>
-            <div class="form-control">
+      <div class="form-group">   
+         <div class="text-center">
+         <div  style="vertical-align: middle"  class="form-group;" [class.has-error]="gender.invalid">
+            <label  class="control-label">Gender : </label>
+            
+            <div class="form-control;row d-flex justify-content-center">
                <label class="radio-inline">
                   <input type="radio" name="gender" required #gender="ngModel" value="male" checked 
                      [(ngModel)]="user.gender">Male </label>
@@ -80,6 +82,6 @@
 
    </div>
 
-   <button type="submit" class="registerbtn btn btn-success" (click)="this.registerEmployee()"> Register
+   <button style="text-align:center;height: 30px; width: 600px;" type="submit" class="registerbtn btn btn-success" (click)="this.registerEmployee()"> Register
    </button>
-  
+</div>
