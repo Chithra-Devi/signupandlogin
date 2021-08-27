@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { LeaveComponent } from './leave/leave.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ToastrModule } from 'ngx-toastr';
     AppComponent,
     SignupComponent,
     LoginComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    LeaveComponent
   
   ],
   imports: [

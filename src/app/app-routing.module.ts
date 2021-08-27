@@ -10,6 +10,7 @@ const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'welcome', component: WelcomeComponent},
   {path:'leave', component: LeaveComponent},
+  
 ];
 
 @NgModule({

@@ -28,15 +28,13 @@ export class LeaveComponent implements OnInit {
   }
   ngOnInit(): void {
   }
-    // ngOnInit(){
-    //   this.user.Reason = '';
-  
-    // }
+    
 
     // showToastr(){
     //   this.toastr.success('some messages', 'titile');
     // }
     applyLeaveEmployee(){
+     console.log("this.user",this.user);
      console.log("this.user");
      
       if (this.user.startDate === undefined || this.user.startDate == '') {
@@ -48,30 +46,25 @@ export class LeaveComponent implements OnInit {
         this.toastr.error('Please select valid End Date');
         return;
       }
-
+      if(this.user.typeOfLeave === undefined  || this.user.typeOfLeave == ''){
+        this.toastr.error('Please select type of leave');
+        return;
+      }
+      
+      
       this._http.post<any>('http://localhost:8080/psa/applyLeave',
         {
           "startDate": this.user.startDate,
           "endDate": this.user.endDate,
           "typeOfLeave": this.user.typeOfLeave,
           "reason": this.user.reason,
-
-
-          // "employee": {
-          //   "id": "3456"
-          // },
-          // "startDate": "05-09-2021",
-          // "endDate": "06-09-2021",
-          // "typeOfLeave": "casual"
         }).subscribe(
           data => {
             if (data.statusCode == "201" || data.statusCode == "200") {
-              this.toastr.success('leave applied successful,  click back to login');
+              this.toastr.success('leave applied successful');
               this.router.navigate(['login']);
             } else (data.statusCode == "500"); {
               this.toastr.error('leave applied already , choose different dates');
-              return;
-
             }
           });
 
