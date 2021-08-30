@@ -10,8 +10,8 @@ import { ToastrService } from 'ngx-toastr';
 export class LoginComponent implements OnInit {
   title = 'login';
   user = {
-    'username': '',
-    'password': ''
+    'username' : '',
+    'password' : ''
   };
     constructor(private http: HttpClient, private router: Router, private toastr: ToastrService) {
 }
@@ -29,8 +29,8 @@ export class LoginComponent implements OnInit {
     else {
       this.http.post<any>('http://localhost:8080/psa/loginService',
         {
-          "username": this.user.username,
-          "password": this.user.password
+          "username" : this.user.username,
+          "password" : this.user.password
         }).subscribe(
           data => {
 

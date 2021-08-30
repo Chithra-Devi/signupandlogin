@@ -27,12 +27,13 @@ export class LeaveComponent implements OnInit {
     }
   }
   ngOnInit(): void {
-  }
-    
+   
+      this.user.typeOfLeave='Earned Leave';
+     
+      console.log("signup signup calling Before");
+   
+    }
 
-    // showToastr(){
-    //   this.toastr.success('some messages', 'titile');
-    // }
     applyLeaveEmployee(){
      console.log("this.user",this.user);
      console.log("this.user");

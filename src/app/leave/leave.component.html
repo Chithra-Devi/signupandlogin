@@ -1,10 +1,3 @@
-<!-- <h1 
-style="text-align:center;color:rgb(22, 21, 21);background-color:rgb(255, 255, 255); border-style: solid ">APPLY LEAVES</h1> -->
-
-
-
-
-
 
 <div class="container">
 
@@ -29,25 +22,25 @@ style="text-align:center;color:rgb(22, 21, 21);background-color:rgb(255, 255, 25
 
 
   <div class="container">
-    <h1 style="text-align:center; border-style: solid">TypeofLeave</h1>
+    <h1 style="text-align:center; border-style:none "> Type Of Leave</h1>
 
 
     <div class="form-check">
       <label class="form-check-label" for="radio1">
         <input style="text-align:left" type="radio" class="form-check-input" id="radio1" name="typeOfLeave" required
-          #typeOfLeave="ngModel" value="Earned Leave" [(ngModel)]="user.typeOfLeave" checked>Earned Leave
+          #typeOfLeave="ngModel" value="Earned Leave" [(ngModel)]="user.typeOfLeave" checked >Earned Leave
       </label>
     </div>
     <div class="form-check">
       <label class="form-check-label" for="radio2">
         <input style="text-align:left" type="radio" class="form-check-input" id="radio2" name="typeOfLeave" required
-          #typeofLeave="ngModel" value="Casual Leave" [(ngModel)]="user.typeOfLeave" checked>Casual Leave
+          #typeofLeave="ngModel" value="Casual Leave" [(ngModel)]="user.typeOfLeave" >Casual Leave
       </label>
     </div>
     <div class="form-check">
       <label class="form-check-label">
         <input style="text-align:left" type="radio" class="form-check-input" id="radio3" name="typesOfLeave" required
-          #typeOfLeave="ngModel" value="Leave Without Pay" [(ngModel)]="user.typeOfLeave" checked>Leave Without Pay
+          #typeOfLeave="ngModel" value="Leave Without Pay" [(ngModel)]="user.typeOfLeave" >Leave Without Pay
       </label>
     </div>
 
@@ -69,5 +62,4 @@ style="text-align:center;color:rgb(22, 21, 21);background-color:rgb(255, 255, 25
     </div>
     <button style="background-color:rgb(136, 240, 253);color:black; height: 30px;width:150"
       (click)="this.applyLeaveEmployee()">Apply Leave</button>
-    <!-- <button style="background-color:rgb(136, 240, 253);color:black" type="back" class="btn btn-primary">Back</button> -->
-  </div>
+   

@@ -56,24 +56,25 @@ showToastr(){
       return;
     }
     if(this.user.name === undefined || this.user.name == ''){
-      this.toastr.error('Please enter valid name');
+      this.toastr.error('Please enter user name');
       return;
     }
    
    
     if(this.user.Password === undefined  || this.user.Password == ''){
-      this.toastr.error('Invalid password');
+      this.toastr.error('Please Enter password');
       return;
     }
     if(this.user.cPassword === undefined  || this.user.cPassword == '') {
-    this.toastr.error('invalid confirm password');
+    this.toastr.error('Please Enter confirm password');
       return;
     }
     if(this.user.Password !== this.user.cPassword) {
       this.toastr.error('Password should be match');
       return;
     }
-    if(this.user.emailId === undefined  || this.user.emailId == ''){
+    if(this.user.emailId === undefined  || this.user.emailId == '')
+    {
       this.toastr.error('Please enter valid email');
       return;
     }
@@ -133,7 +134,7 @@ showToastr(){
   }
 
   ngOnInit(): void {
-    this.user.gender='male';
+    this.user.gender='female';
    
     console.log("signup signup calling Before");
  

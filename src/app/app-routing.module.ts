@@ -7,7 +7,7 @@ import { LeaveComponent } from './leave/leave.component';
 
 const routes: Routes = [
   {path:'signup', component: SignupComponent},
-  {path:'login', component: LoginComponent},
+  {path:'', component: LoginComponent},
   {path:'welcome', component: WelcomeComponent},
   {path:'leave', component: LeaveComponent},
   
