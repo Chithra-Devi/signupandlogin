@@ -33,7 +33,11 @@ export class LoginComponent implements OnInit {
           "password" : this.user.password
         }).subscribe(
           data => {
+            
 
+            localStorage.setItem('employeeId', this.user.username);
+            
+            
             if (data.statusCode == "201") {
               this.toastr.success('login successful');
               this.router.navigate(['welcome']);

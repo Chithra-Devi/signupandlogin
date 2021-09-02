@@ -18,8 +18,7 @@ export class LeaveComponent implements OnInit {
   [x: string]: any;
   successMessage: string | undefined;
   title = 'leave';
-  signup: any;
-  user: any;
+ 
 
   constructor(private _http: HttpClient, private router: Router, private toastr: ToastrService) {
     this.user = {
@@ -28,16 +27,21 @@ export class LeaveComponent implements OnInit {
   }
   ngOnInit(): void {
    
-      this.user.typeOfLeave='Earned Leave';
-     
-      console.log("signup signup calling Before");
+    this.user.typeOfLeave='Earned Leave';
    
-    }
+    console.log("signup signup calling Before");
+ 
+  }
+    
 
+  
     applyLeaveEmployee(){
      console.log("this.user",this.user);
      console.log("this.user");
-     
+
+    
+    
+  
       if (this.user.startDate === undefined || this.user.startDate == '') {
         this.toastr.error('Please select valid Start Date');
         return;
@@ -55,19 +59,38 @@ export class LeaveComponent implements OnInit {
       
       this._http.post<any>('http://localhost:8080/psa/applyLeave',
         {
-          "startDate": this.user.startDate,
+          // {
+          //   "employee":{
+          //   "id":"455"
+          //   },
+          //   "startDate":"05-09-2021",
+          //   "endDate":"06-09-2021",
+          //   "typeOfLeave":"casual"
+          //   },
+
+          "employee": {
+            "id":  localStorage.getItem('employeeId')
+            
+            
+          },
+         "startDate": this.user.startDate,
           "endDate": this.user.endDate,
           "typeOfLeave": this.user.typeOfLeave,
-          "reason": this.user.reason,
+          
+          
         }).subscribe(
           data => {
-            if (data.statusCode == "201" || data.statusCode == "200") {
+            if (data.statusCode === "201" || data.statusCode == "200") {
               this.toastr.success('leave applied successful');
-              this.router.navigate(['login']);
-            } else (data.statusCode == "500"); {
-              this.toastr.error('leave applied already , choose different dates');
+            
+            } else {
             }
+            
           });
 
     }
+}
+
+function controller(arg0: string, arg1: (string | (($scope: any) => void))[]) {
+  throw new Error('Function not implemented.');
 }

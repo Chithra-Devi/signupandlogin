@@ -1,12 +1,11 @@
 
-<div class="container">
-
-
+<div class="form-check">
+<div class="row d-flex justify-content-center">
   <div class="form-group">
     <label for="startdate" style="text-align:center;color:rgb(18, 18, 235); ">startDate</label>
     <input style="text-align:left;height: 40px; width: 800px" type="date" class="form-control" placeholder="Enter Date"
       id="startDate" [(ngModel)]="user.startDate" required />
-
+   
 
 
     <div class="valid-feedback">Valid.</div>
@@ -19,16 +18,16 @@
     <div class="valid-feedback">Valid.</div>
     <div class="invalid-feedback">Please fill out this field.</div>
   </div>
-
+</div>
 
   <div class="container">
-    <h1 style="text-align:center; border-style:none "> Type Of Leave</h1>
+    <h1 style="text-align:center; border-style: none">Type Of Leave</h1>
 
 
     <div class="form-check">
       <label class="form-check-label" for="radio1">
         <input style="text-align:left" type="radio" class="form-check-input" id="radio1" name="typeOfLeave" required
-          #typeOfLeave="ngModel" value="Earned Leave" [(ngModel)]="user.typeOfLeave" checked >Earned Leave
+          #typeOfLeave="ngModel" value="Earned Leave" [(ngModel)]="user.typeOfLeave" checked>Earned Leave
       </label>
     </div>
     <div class="form-check">
@@ -62,4 +61,8 @@
     </div>
     <button style="background-color:rgb(136, 240, 253);color:black; height: 30px;width:150"
       (click)="this.applyLeaveEmployee()">Apply Leave</button>
-   
+    
+      <button style="background-color:rgb(136, 240, 253);color:black; height: 30px;width:150" routerLink= "" formnovalidate
+      (click)="this.applyLeaveEmployee()">Logout</button>
+    
+  </div>

@@ -14,13 +14,15 @@ import { ToastrModule } from 'ngx-toastr';
 import { LeaveComponent } from './leave/leave.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
     LoginComponent,
     WelcomeComponent,
-    LeaveComponent
+    LeaveComponent,
+  
   
   ],
   imports: [

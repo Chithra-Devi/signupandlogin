@@ -116,11 +116,11 @@ showToastr(){
     }).subscribe(
       data => {
         if(data.statusCode == "201" || data.statusCode == "200") {
-          this.toastr.success('register successful,  click back to login');
-          this.router.navigate(['login']);
+          this.toastr.success('register successful');
+          this.router.navigate(['']);
         } else if( data.statusCode == "500"){
-          this.toastr.error('user already exists, click back to login');
-          this.router.navigate(['login']);
+          this.toastr.error('user already exists');
+          this.router.navigate(['']);
          
         }
         else 
