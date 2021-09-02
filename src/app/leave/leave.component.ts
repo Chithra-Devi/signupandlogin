@@ -39,8 +39,7 @@ export class LeaveComponent implements OnInit {
      console.log("this.user",this.user);
      console.log("this.user");
 
-    
-    
+     
   
       if (this.user.startDate === undefined || this.user.startDate == '') {
         this.toastr.error('Please select valid Start Date');
@@ -50,7 +49,22 @@ export class LeaveComponent implements OnInit {
       if (this.user.endDate === undefined || this.user.endDate == '') {
         this.toastr.error('Please select valid End Date');
         return;
+      
+    
       }
+
+      if(this.user.startDate > this.user.endDate)
+
+        
+      {
+       this.toastr.error('End Date should be greater than Start Date.');
+       return;
+      }
+      else
+      {
+       this.toastr.success('Dates are Perfect.');
+      }
+      
       if(this.user.typeOfLeave === undefined  || this.user.typeOfLeave == ''){
         this.toastr.error('Please select type of leave');
         return;
@@ -59,18 +73,8 @@ export class LeaveComponent implements OnInit {
       
       this._http.post<any>('http://localhost:8080/psa/applyLeave',
         {
-          // {
-          //   "employee":{
-          //   "id":"455"
-          //   },
-          //   "startDate":"05-09-2021",
-          //   "endDate":"06-09-2021",
-          //   "typeOfLeave":"casual"
-          //   },
-
           "employee": {
             "id":  localStorage.getItem('employeeId')
-            
             
           },
          "startDate": this.user.startDate,
@@ -91,6 +95,3 @@ export class LeaveComponent implements OnInit {
     }
 }
 
-function controller(arg0: string, arg1: (string | (($scope: any) => void))[]) {
-  throw new Error('Function not implemented.');
-}
